@@ -3,15 +3,18 @@ package com.udemy.springboot.di.app.springboot_di.repositories;
 import java.util.Arrays;
 import java.util.List;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import com.udemy.springboot.di.app.springboot_di.models.Product;
 
-@Component
+// Esta anotación de Spring Framework indica que la clase ProductRepositoryImpl es un repositorio.En Spring,un repositorio es una clase que se encarga de acceder a la base de datos o a cualquier otra fuente de datos. Esta anotación es parte del módulo Spring Data y es especialmente útil cuando se trabaja con Spring Data JPA o Spring Data MongoDB, ya que facilita la creación de repositorios para interactuar con bases de datos.
+@Repository
+// Implementación de la Interfaz ProductRepository
 public class ProductRepositoryImpl implements ProductRepository {
     
     private List<Product> data;
 
+    // Constructor inicializador que carga los productos de prueba
     public ProductRepositoryImpl() {
         this.data = Arrays.asList(
                 new Product(1L, "Memoria de consair 32", 300L),

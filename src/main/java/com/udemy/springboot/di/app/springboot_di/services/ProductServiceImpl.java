@@ -4,14 +4,17 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import com.udemy.springboot.di.app.springboot_di.models.Product;
 import com.udemy.springboot.di.app.springboot_di.repositories.ProductRepository;
 
-@Component
+// Esta anotación de Spring Framework indica que la clase ProductServiceImpl es un servicio.En Spring,un servicio es una clase que contiene la lógica de negocio de la aplicación. La capa de servicio se encuentra entre la capa de controlador (que maneja las peticiones HTTP) y la capa de repositorio (que accede a la base de datos).
+@Service
+// Implementación de la Interfaz ProductService
 public class ProductServiceImpl implements ProductService {
 
+    // anotación que permite inyectar objeto spring[bean/componente]
     @Autowired
     private ProductRepository repository;
 
