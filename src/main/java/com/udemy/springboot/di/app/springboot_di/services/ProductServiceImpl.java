@@ -35,9 +35,12 @@ public class ProductServiceImpl implements ProductService {
 
     // inyectar dependencia mediante constructor requiere "private Environment environment"
     // No es necesario colocar @Autowired cuando se trata de DI mediante constructor
-    // @Qualifier le dice a Spring que inyecte el bean con el nombre "productRepositoryImpl", que corresponde a la clase "ProductRepositoryImpl"
+    // // @Qualifier le dice a Spring que inyecte el bean con el nombre "productRepositoryImpl", que corresponde a la clase "ProductRepositoryImpl"
     // public ProductServiceImpl(@Qualifier("productList") ProductRepository repository, Environment environment) {
-    public ProductServiceImpl(@Qualifier("productList") ProductRepository repository) {
+    // // sin Environment
+    // public ProductServiceImpl(@Qualifier("productList") ProductRepository repository) {
+    // @Qualifier referencia al método de la clase AppConfig con el nombre persnalizado "productJson"
+    public ProductServiceImpl(@Qualifier("productJson") ProductRepository repository) {
         this.repository = repository;
         // this.environment = environment;
     }
